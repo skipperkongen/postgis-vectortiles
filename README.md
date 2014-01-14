@@ -3,6 +3,8 @@
 This directory contains the pg_tiler server (python directory), and a pg_tiler HTML demo configured to match the
 server configuration.
 
+It is a partly abandoned project. I've made it public because you may find use for it, but probably not.
+
 ## PGTiler server
 The PGTiler server is contained in the directory './python'.
 
