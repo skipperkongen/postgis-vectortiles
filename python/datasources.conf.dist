@@ -1,0 +1,10 @@
+[A descriptive dataset name]
+ds_type = postgis20
+db_name = XXX
+db_host = XXX
+db_user = XXX
+db_password = XXX
+table = XXX
+fid_col = XXX
+geom_col = XXX
+property_cols = XXX,YYY,ZZZ

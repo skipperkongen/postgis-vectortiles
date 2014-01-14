@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Danske OSM veje</title>
+    <script type="text/javascript" src="polymaps.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://localhost:8080/styles/denmark_highway/default.css" />
+	<link rel="stylesheet" type="text/css" href="http://localhost:8080/styles/denmark_natural/default.css" />
+    <style type="text/css">
+
+@import url("example.css");
+
+body {
+  background: #E6E6E6;
+}
+
+    </style>
+  </head>
+  <body id="map">
+    <script type="text/javascript">
+
+	var po = org.polymaps;
+	// http://stackoverflow.com/questions/6872887/simplegeo-polymaps-total-noob-linestring-displaying-as-polygons-question
+
+	var map = po.map()
+	    .container(document.getElementById("map").appendChild(po.svg("svg")))
+	    .center({lat: 55.6, lon: 12.6})
+	    .zoom(12)
+	    .zoomRange([3, 16])
+	    .add(po.interact());
+
+	map.add(po.image()
+		.url(po.url("http://otile1.mqcdn.com/tiles/1.0.0/osm/{Z}/{X}/{Y}.png")));
+
+	map.add(po.geoJson()
+	    .url("http://localhost:8080/vectile/denmark_natural/3857/{Z}/{X}/{Y}.json")
+		.on("load",load)
+		.id("denmark_natural"));
+
+	map.add(po.geoJson()
+	    .url("http://localhost:8080/vectile/denmark_highway/3857/{Z}/{X}/{Y}.json")
+		.on("load",load)
+		.id("denmark_highway"));
+
+	function load(e) {
+		for (var i = 0; i < e.features.length; i++) {
+			var feature = e.features[i];
+			feature.element.setAttribute("id", feature.data.id);
+			feature.element.setAttribute("class", feature.data.properties['type']);
+			feature.element.setAttribute("data-name", feature.data.properties['name']);
+			//feature.element
+	  }
+	}
+    </script>
+  </body>
+</html>

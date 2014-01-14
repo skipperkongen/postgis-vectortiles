@@ -1,0 +1,45 @@
+.layer path {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+#denmark_highway path {
+  	stroke: rgb(255, 0, 0);
+  	stroke-opacity: 1;
+	stroke-width: 1;
+  	fill:none;
+  	/*shape-rendering: crispEdges;*/
+  	stroke-linecap: square;
+}
+
+#denmark_highway path.path, path.pedestrian, path.footway {
+	stroke-dasharray: 2,2;
+}
+
+#denmark_highway path:hover {
+	stroke: Black;
+}
+
+#denmark_highway path.motorway {
+	stroke-width: 5;
+}
+
+#denmark_highway path.motorway_link {
+	stroke-width: 3;
+}
+
+#denmark_highway path.primary {
+  	stroke-width: 4;
+}
+
+#denmark_highway path.secondary {
+  	stroke-width: 4;
+}
+
+#denmark_highway path.tertiary {
+  	stroke-width: 2;
+}
+
+#denmark_highway path.residential {
+  	stroke-width: 2;
+}

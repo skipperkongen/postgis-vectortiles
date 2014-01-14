@@ -1,0 +1,29 @@
+.layer path {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+#denmark_natural path {
+	stroke-width: 0;
+	stroke: Black;
+  	stroke-linecap: square;
+}
+
+#denmark_natural path:hover {
+	stroke-width: 1;
+}
+
+#denmark_natural path.forest {
+	fill: #8BB381;
+	fill-opacity: 0.5;
+}
+
+#denmark_natural path.water {
+	fill: #EFF8FB;
+	fill-opacity: 0.5;
+}
+
+#denmark_natural path.park {
+	fill: #5FB404;
+	fill-opacity: 0.5;
+}

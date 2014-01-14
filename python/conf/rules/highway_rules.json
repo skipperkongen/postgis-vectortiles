@@ -1,0 +1,14 @@
+{"rules": [
+	{
+		"description": "Only show larger roads above certain zoom-level",
+		"class": "vectile.maprules.ResolutionRule",
+		"where_clause": "type in ('primary','primary_link', 'secondary', 'secondary_line', 'tertiary','motorway','motorway_link')",
+		"args": {"min_resolution": 10, "max_resolution": 150.0}
+	},
+	{
+		"description": "Only show biggest roads above certain zoom-level",
+		"class": "vectile.maprules.ResolutionRule",
+		"where_clause": "type in ('primary', 'motorway')",
+		"args": {"min_resolution": 150.0}
+	}
+]}
